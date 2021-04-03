@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block menu %}
+{% endblock %}
+{% block content %}
+<form action="" method="post">
+{% csrf_token %}
+{% for choice in poll.polls.all %}
+<p><input type="ratio" name="option">{{ choice.pk }} {{ poll.pk }}</p>
+</form>
+{% endblock %}
