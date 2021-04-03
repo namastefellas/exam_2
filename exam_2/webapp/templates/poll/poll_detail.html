@@ -3,14 +3,23 @@
 <li><a href="{% url 'create_poll' %}">Create Poll</a></li>
 {% endblock %}
 {% block content %}
-<div class="card">
-    <div class="card-header">
-      Question
+<div class="container">
+  <div class="card">
+    <div class="card-header">Question</div>
+<div class="card-body">
+    <h5 class="card-title">{{ poll.question }}</h5>
+    <p class="card-text">{{ poll.created_at }}</p>
+    <a href="#" class="btn btn-primary">Edit</a>
+</div>
+</div>
+{% for choice in poll.polls.all %}  
+    <div class="card mb-2" style="width: 18rem;">
+          <div class="card-body mb-2">
+          <h6 class="card-subtitle mb-2">{{ choice.choice_text }}</h6>
+          <a href="#" class="btn btn-secondary">Edit</a>
+          <a href="#" class="btn btn-secondary">Delete</a>
     </div>
-    <div class="card-body">
-      <h5 class="card-title">{{ poll.question }}</h5>
-      <p class="card-text">{{ poll.created_at }}</p>
-      <a href="#" class="btn btn-primary">Edit</a>
     </div>
-  </div>
+{% endfor %}
+</div>
 {% endblock %}
