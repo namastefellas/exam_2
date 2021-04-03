@@ -47,3 +47,12 @@ class IndexView(ListView):
 class PollDetail(DetailView):
     template_name = 'poll/poll_detail.html'
     model = Poll
+
+
+class PollCreate(CreateView):
+    template_name = 'poll/poll_create.html' 
+    model = Poll
+    form_class = PollForm
+
+    def get_success_url(self):
+        return reverse('details_poll', kwargs={'pk': self.object.pk})
