@@ -13,12 +13,12 @@
     {% for poll in polls %}
     <div class="card">
         <div class="card-header">
-          Featured
+          Question
         </div>
         <div class="card-body">
           <h5 class="card-title">{{ poll.question }}</h5>
           <p class="card-text">{{ poll.created_at }}</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+          <a href="{% url 'details_poll' poll.pk %}" class="btn btn-primary">Details</a>
         </div>
       </div>
     {% endfor %}

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block menu %}
+<li><a href="#">Create Poll</a></li>
+{% endblock %}
+{% block content %}
+<div class="card">
+    <div class="card-header">
+      Question
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">{{ poll.question }}</h5>
+      <p class="card-text">{{ poll.created_at }}</p>
+      <a href="#" class="btn btn-primary">Edit</a>
+    </div>
+  </div>
+{% endblock %}

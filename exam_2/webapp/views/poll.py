@@ -42,3 +42,8 @@ class IndexView(ListView):
             context['query'] = urlencode({'search_value': self.search_data})
 
         return context
+
+
+class PollDetail(DetailView):
+    template_name = 'poll/poll_detail.html'
+    model = Poll
