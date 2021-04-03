@@ -13,7 +13,7 @@ class IndexView(ListView):
     context_object_name = 'polls'
     ordering = ('-created_at')
     paginate_by = 5
-    paginate_orphans = 1
+    paginate_orphans = 2
 
     def get(self, request, **kwargs):
         self.form = SearchForm(request.GET)
@@ -56,3 +56,20 @@ class PollCreate(CreateView):
 
     def get_success_url(self):
         return reverse('details_poll', kwargs={'pk': self.object.pk})
+
+
+class PollEdit(UpdateView):
+    form_class = PollForm
+    model = Poll
+    template_name = 'poll/poll_update.html'
+    context_object_name = 'poll'
+
+    def get_success_url(self):
+        return reverse('details_poll', kwargs={'pk': self.kwargs.get('pk')})
+
+
+class PollDelete(DeleteView):
+    template_name = 'poll/poll_delete.html'
+    model = Poll
+    context_object_name = 'poll'
+    success_url = reverse_lazy('poll_list')

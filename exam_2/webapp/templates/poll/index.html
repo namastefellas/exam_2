@@ -20,6 +20,8 @@
           <h5 class="card-title">{{ poll.question }}</h5>
           <p class="card-text">{{ poll.created_at }}</p>
           <a href="{% url 'details_poll' poll.pk %}" class="btn btn-primary">Details</a>
+          <a href="{% url 'edit_poll' poll.pk %}" class="btn btn-secondary">Edit</a>
+          <a href="{% url 'delete_poll' poll.pk %}" class="btn btn-secondary">Delete</a>
         </div>
       </div>
     {% endfor %}

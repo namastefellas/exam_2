@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block menu %}     
+{% endblock %}
+{% block content %}
+<h2>Are you sure want to delete this poll?</h2>
+<form method="POST" action="{% url 'delete_poll' poll.pk %}">
+    {% csrf_token %}
+        <p><input type="submit" value="Confirm"></p>
+        <a href="{% url 'poll_list' %}" class="btn btn-secondary">Cancel</a>
+    </form>
+{% endblock %}
