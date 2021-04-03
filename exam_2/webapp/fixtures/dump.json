@@ -1,0 +1,76 @@
+[
+{
+  "model": "webapp.poll",
+  "pk": 1,
+  "fields": {
+    "created_at": "2021-04-03T06:12:38.193Z",
+    "question": "Just some random question"
+  }
+},
+{
+  "model": "webapp.poll",
+  "pk": 2,
+  "fields": {
+    "created_at": "2021-04-03T06:17:33.595Z",
+    "question": "Another random question"
+  }
+},
+{
+  "model": "webapp.poll",
+  "pk": 3,
+  "fields": {
+    "created_at": "2021-04-03T06:18:59.352Z",
+    "question": "Do you think that... Can't think of question"
+  }
+},
+{
+  "model": "webapp.poll",
+  "pk": 4,
+  "fields": {
+    "created_at": "2021-04-03T06:19:19.455Z",
+    "question": "Some text for filling space for pagination"
+  }
+},
+{
+  "model": "webapp.choice",
+  "pk": 1,
+  "fields": {
+    "choice_text": "Some random choice text",
+    "poll": 1
+  }
+},
+{
+  "model": "webapp.choice",
+  "pk": 2,
+  "fields": {
+    "choice_text": "Some random choice text",
+    "poll": 1
+  }
+},
+{
+  "model": "webapp.choice",
+  "pk": 3,
+  "fields": {
+    "choice_text": "Why are you... Nevermind",
+    "poll": 1
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$216000$UcDosWwQhBu3$Z+Nu8lx6pVSI+PL3lq2y1Il4OMjnv+NcLCiVBbEMyK4=",
+    "last_login": "2021-04-03T06:12:16.492Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "admin@admin.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2021-04-03T06:11:54.478Z",
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]

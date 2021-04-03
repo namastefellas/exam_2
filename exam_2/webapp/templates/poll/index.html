@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block menu %}
+{% endblock %}
+{% block content %}
+<div class="container">
+    <h1>Polls</h1>
+    {% if not polls %}
+        <h2>There is no polls</h2>
+    {% else %}
+        {% include "partial/search.html" %}
+    {% endif %}
+
+    {% for poll in polls %}
+    <div class="card">
+        <div class="card-header">
+          Featured
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">{{ poll.question }}</h5>
+          <p class="card-text">{{ poll.created_at }}</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    {% endfor %}
+    {% include 'partial/pagination.html' %}
+</div>
+{% endblock %}
